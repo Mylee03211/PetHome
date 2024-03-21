@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间：找到所在的mapper接口的位置-->
+<mapper namespace="com.itld.demos.web.mapper.petMapper">
+    <!--sql语句代码-->
+    <update id="updated">
+        update pet
+        <set>
+            <if test="petname!=null">
+                petname = #{petname},
+            </if>
+            <if test="sex!=null">
+                sex = #{sex},
+            </if>
+            <if test="species!=null">
+                species = #{species},
+            </if>
+            <if test="phone!=null">
+                phone = #{phone},
+            </if>
+            <if test="address!=null">
+                address = #{address}
+            </if>
+        </set>
+        <where>
+            ownername = #{ownername} AND
+            password = #{password}
+        </where>
+    </update>
+    <update id="UpdateAvatar">
+        update pet
+        <set>
+            <if test="petname!=null">
+                petname = #{petname},
+            </if>
+            <if test="sex!=null">
+                sex = #{sex},
+            </if>
+            <if test="species!=null">
+                species = #{species},
+            </if>
+            <if test="phone!=null">
+                phone = #{phone},
+            </if>
+            <if test="address!=null">
+                address = #{address},
+            </if>
+            <if test="avatar!=null">
+                avatar = #{avatar},
+            </if>
+            <if test="password!=null">
+                password = #{password}
+            </if>
+        </set>
+        <where>
+            ownername = #{ownername}
+        </where>
+    </update>
+    <update id="savePet">
+        update pet
+        <set>
+            <if test="petname!=null">
+                petname = #{petname},
+            </if>
+            <if test="sex!=null">
+                sex = #{sex},
+            </if>
+            <if test="species!=null">
+                species = #{species},
+            </if>
+            <if test="phone!=null">
+                phone = #{phone},
+            </if>
+            <if test="address!=null">
+                address = #{address},
+            </if>
+            <if test="avatar!=null">
+                avatar = #{avatar},
+            </if>
+        </set>
+        <where>
+            ownername = #{ownername}
+        </where>
+    </update>
+    <update id="saveSubmit">
+        update pet
+        <set>
+            <if test="petname!=null">
+                petname = #{petname},
+            </if>
+            <if test="sex!=null">
+                sex = #{sex},
+            </if>
+            <if test="species!=null">
+                species = #{species},
+            </if>
+            <if test="phone!=null">
+                phone = #{phone},
+            </if>
+            <if test="address!=null">
+                address = #{address},
+            </if>
+            <if test="avatar!=null">
+                avatar = #{avatar},
+            </if>
+        </set>
+        <where>
+            ownername = #{ownername}
+        </where>
+    </update>
+</mapper>
+

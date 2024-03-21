@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间：找到所在的mapper接口的位置-->
+<mapper namespace="com.itld.demos.web.mapper.adminMapper">
+    <!--sql语句代码-->
+    <update id="update">
+        update admin
+        <set>
+            <if test="username!=null">
+                username = #{username},
+            </if>
+            <if test="password!=null">
+                password = #{password}
+            </if>
+        </set>
+        <where>
+            id = #{id}
+        </where>
+
+    </update>
+   <update id="UpdateAvatar">
+       update admin
+    <set>
+        <if test="password!=null">
+        password = #{password},
+         </if>
+        <if test="avatar!=null">
+        avatar = #{avatar}
+        </if>
+    </set>
+       <where>
+        username = #{username}
+       </where>
+   </update>
+    <update id="updated">
+        update admin
+    <set>
+        <if test="password!=null">
+            password = #{password}
+        </if>
+    </set>
+        <where>
+            username = #{username}
+        </where>
+    </update>
+</mapper>
